@@ -1,0 +1,117 @@
+$white: white;
+$black: black;
+$green: rgb(52, 168, 28);
+$red: red;
+
+@mixin btnWithColor($color) {
+  border: solid $color 2px;
+  color: $color;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+a {
+  color: white;
+  margin-top: 2rem;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#root {
+  display: flex;
+}
+
+button {
+  cursor: pointer;
+  outline: none;
+  background: none;
+  padding: 0.5rem;
+  font-size: larger;
+  margin-block: 1rem;
+}
+
+
+.decrementBtn {
+  @include btnWithColor($red);
+}
+
+.reduxContainer {
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+  margin-top: 2rem;
+}
+
+.reduxContainer {
+  h2 {
+    color: rgb(12, 215, 241);
+  }
+}
+
+.reduxIncrementBtn {
+  border: solid rgb(241, 245, 40) 2px;
+  color: rgb(241, 245, 40);
+}
+
+.reduxDecrementBtn {
+  border: solid rgb(204, 14, 103) 2px;
+  color: rgb(204, 14, 103);
+}
+
+.vendorsContainer {
+  background-color: black;
+  height: 100vh;
+  width: 100vw;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.vendorResults {
+  display: flex;
+  flex-direction: column;
+  font-style: italic;
+}
+
+@keyframes flash {
+  0% {
+    opacity: .5;
+    transform: scale(.9) rotate(-2.5deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.1) rotate(2.5deg);
+  }
+}
+
+main {
+  width: 100vw;
+  height: 100vh;
+  background-color: $black;
+  color: $white;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
+
+.incrementBtn {
+  @include btnWithColor($green);
+  animation: fade 2s cubic-bezier(0.075, 0.82, 0.165, 1) forwards;
+}
+
+@keyframes fade {
+  0% {
+    opacity: 0;
+    transform: translateX(5rem);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(-5rem);
+  }
+}
